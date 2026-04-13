@@ -11,21 +11,24 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 //Servicio que contiene la lógica de negocio de las tareas.
+
  
 @Service
 public class TareaService {
 
     @Autowired
     private TareaRepository tareaRepository;
+    // Retorna todas las tareas registradas
 
     public List<Tarea> listarTodas() {
         return tareaRepository.findAll();
     }
+    // Busca una tarea por su ID
 
     public Optional<Tarea> buscarPorId(Long id) {
         return tareaRepository.findById(id);
     }
-
+    // Guarda una nueva tarea validando sus datos
     public boolean guardar(Tarea nuevaTarea) {
         if (nuevaTarea.getTitulo() == null || nuevaTarea.getTitulo().trim().isEmpty()) {
             return false;
