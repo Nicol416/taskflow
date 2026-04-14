@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//Controlador REST que expone los endpoints de tareas
-
 @RestController
 @RequestMapping("/tareas")
 public class TareaController {
